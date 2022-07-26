@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: rgb(0, 41, 77);
+  color: #eee;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
+  padding: 1rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content:center;
+}
+
+.search{
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  background-color: #cdcedd;
+  color: #000;
+  min-width: 18rem;
+}
+
+.movie{
+  margin: 1rem;
+  width: 230px;
+  background-color:#373b69 ;
+  border-radius: 3px;
+  box-shadow:3px 3px 5px rgba(0,0 ,0 ,0.1);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.movie img{
+  object-fit: cover;
+  height: 350px;
+  width: 100%;
+}
+
+.movie-container{
+  display: flex;
+  flex-wrap:wrap ;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-info{
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-info h3{
+  margin: 0;
+}
+
+.movie-over{
+  background-color: #eee;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow:3px -3px 5px rgba(0,0 ,0 ,0.1);
+  position: absolute;
+  overflow: auto;
+  max-height: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;  
+  color: #373b69;
+  padding: 1rem;
+  transform: translateY(102%);
+  transition: 0.2s ease-in-out;
+}
+
+.movie:hover .movie-over{
+  transform: translateY(0);
+}
+
+.tag{
+  background-color: #7c83ca;
+  border-radius:5px ;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.tag.green{
+color: rgb(7, 119, 7);
+}
+.tag.orange{
+  color: rgb(230, 152, 9);
+}
+.tag.red{
+  color: rgb(192, 29, 29);
 }
